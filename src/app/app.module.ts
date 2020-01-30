@@ -3,12 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { StoreModule } from '@ngrx/store';
+import { CustomerReducer } from './customer.reducer';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({ customers: CustomerReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
