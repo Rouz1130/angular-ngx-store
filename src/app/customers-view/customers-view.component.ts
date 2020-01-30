@@ -19,6 +19,10 @@ constructor(private store: Store<{ customers: Customer[] }>) {
   this.customers = store.pipe(select('customers'));
 }
 
+removeCustomer(customerIndex) {
+  this.store.dispatch(new CustomerRemove(customerIndex));
+}
+
   ngOnInit() {
   }
 
